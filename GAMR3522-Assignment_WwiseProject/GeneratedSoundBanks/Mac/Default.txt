@@ -1,0 +1,21 @@
+Event	ID	Name			Wwise Object Path	Notes
+	445985469	Die			\Default Work Unit\Player\Die	
+	639453935	Blaster_Fire			\Default Work Unit\Weapons\Blaster\Blaster_Fire	
+	674522502	Land			\Default Work Unit\Player\Land	
+	1116398592	Hit			\Default Work Unit\Player\Hit	
+	1866025847	Footstep			\Default Work Unit\Player\Footstep	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1431031706	GroundMaterials			\Default Work Unit\GroundMaterials	
+
+Switch	ID	Name	Switch Group			Notes
+	2144363834	Rock	GroundMaterials			
+	2473969246	Metal	GroundMaterials			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	70889181	-01	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Mac\SFX\steps\-01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\FootstepSwitch\Metal\-01		55010
+	183073713	-03	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Mac\SFX\steps\-03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\FootstepSwitch\Metal\-03		47924
+	308624272	blaster	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Mac\SFX\blaster_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\blaster		861524
+	409597543	-04	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Mac\SFX\steps\-04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\FootstepSwitch\Metal\-04		43790
+	605552622	-02	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Mac\SFX\steps\-02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\FootstepSwitch\Metal\-02		38476
+

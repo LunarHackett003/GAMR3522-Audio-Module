@@ -60,8 +60,10 @@ namespace Unity.FPS.AI
         [Tooltip("The duration of the flash on hit")]
         public float FlashOnHitDuration = 0.5f;
 
-        [Header("Sounds")] [Tooltip("Sound played when recieving damages")]
-        public AudioClip DamageTick;
+        [Header("Sounds")]
+        [Tooltip("Sound played when recieving damages")]
+        //public AudioClip DamageTick;
+        public AK.Wwise.Event damageEvent, deathEvent;
 
         [Header("VFX")] [Tooltip("The VFX prefab spawned when the enemy dies")]
         public GameObject DeathVfx;
@@ -350,6 +352,8 @@ namespace Unity.FPS.AI
                 m_LastTimeDamaged = Time.time;
             
                 m_WasDamagedThisFrame = true;
+
+                damageEvent.Post(gameObject);
             }
         }
 
@@ -367,7 +371,7 @@ namespace Unity.FPS.AI
             {
                 Instantiate(LootPrefab, transform.position, Quaternion.identity);
             }
-
+            deathEvent.Post(gameObject);
             // this will call the OnDestroy function
             Destroy(gameObject, DeathDuration);
         }

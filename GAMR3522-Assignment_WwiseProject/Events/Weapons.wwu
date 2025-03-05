@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F5C72173-5DCA-4B7B-96E4-43CB52ACFBD4}" SchemaVersion="119" RootDocumentID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}" ParentDocumentID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}">
+	<Events>
+		<WorkUnit Name="Weapons" ID="{F5C72173-5DCA-4B7B-96E4-43CB52ACFBD4}" OwnerID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Blaster" ID="{BCA3F4B8-B081-4EBF-ACBC-06B73691B31E}" ShortID="208112425">
+					<ChildrenList>
+						<Event Name="Blaster_Fire" ID="{DC2DE425-8FA0-4823-9DCA-865CCE48528D}">
+							<ChildrenList>
+								<Action Name="" ID="{5551C24F-302E-41EC-8F1B-EE8DCFD0884D}" ShortID="925213233">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BlasterFire" ID="{08D57008-B7F1-4739-BF53-C4937E209739}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Shotgun" ID="{4187399D-6C25-428F-B473-FD9AAF3D445B}" ShortID="805439686"/>
+				<Folder Name="DiscLauncher" ID="{FD9C89BD-B53B-4DA3-B113-9ED83849EED0}" ShortID="924805252"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

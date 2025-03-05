@@ -1,0 +1,30 @@
+Event	ID	Name			Wwise Object Path	Notes
+	639453935	Blaster_Fire			\Default Work Unit\Weapons\Blaster\Blaster_Fire	
+	1866025847	Footstep			\Default Work Unit\Player\Footstep	
+	2170376225	DroneDie			\Default Work Unit\Enemies\Drone\DroneDie	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1431031706	GroundMaterials			\Default Work Unit\GroundMaterials	
+
+Switch	ID	Name	Switch Group			Notes
+	2144363834	Rock	GroundMaterials			
+	2473969246	Metal	GroundMaterials			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3205342700	WeaponAmmoRatio			\Default Work Unit\WeaponAmmoRatio	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	3198253	concrete4	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\concrete4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Rock\concrete4		29114
+	70889181	-01	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\steps\-01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Metal\-01		55010
+	183073713	-03	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\steps\-03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Metal\-03		47924
+	227416392	concrete7	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\concrete7_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Rock\concrete7		35276
+	308624272	blaster	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\blaster_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Weapons\BlasterFire\blaster		861524
+	409597543	-04	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\steps\-04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Metal\-04		43790
+	414483335	concrete5	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\concrete5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Rock\concrete5		34418
+	448734971	concrete2	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\concrete2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Rock\concrete2		25666
+	605552622	-02	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\steps\-02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Metal\-02		38476
+	628794160	concrete3	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\concrete3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Rock\concrete3		14606
+	742292978	droneDeath	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\robotDeath_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Enemies\droneDeath		260972
+	774241717	concrete1	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\concrete1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Rock\concrete1		22638
+	794760155	concrete6	D:\Uni\Audio\GAMR3522-Assignment\GAMR3522-Assignment_WwiseProject\.cache\Windows\SFX\concrete6_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Player\PlayerFootstep\Rock\concrete6		36290
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EDF40437-0423-409C-B883-4D6486DE2B1E}" SchemaVersion="119" RootDocumentID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}" ParentDocumentID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}">
+	<Events>
+		<WorkUnit Name="Player" ID="{EDF40437-0423-409C-B883-4D6486DE2B1E}" OwnerID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Footstep" ID="{A06F60F3-A63A-4BC1-8853-EBDBEE5B902E}">
+					<ChildrenList>
+						<Action Name="" ID="{DC98749E-527E-4E54-8FE9-0735EE0E60DD}" ShortID="100263519">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerFootstep" ID="{EF7AB79B-97A7-4E47-B800-7AEB87CE32BD}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Land" ID="{004FC257-7EB6-4AFE-969E-52151931EAC0}"/>
+				<Event Name="Die" ID="{F98EDDC8-3695-42E8-A245-2775C73CB0D5}"/>
+				<Event Name="Hit" ID="{88BC55F3-9EE0-4151-A66D-00769D6B4C61}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

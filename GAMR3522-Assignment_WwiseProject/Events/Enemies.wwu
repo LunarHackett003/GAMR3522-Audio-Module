@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A39649D2-E045-4AEB-93B3-3CB4AA2B5591}" SchemaVersion="119" RootDocumentID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}" ParentDocumentID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}">
+	<Events>
+		<WorkUnit Name="Enemies" ID="{A39649D2-E045-4AEB-93B3-3CB4AA2B5591}" OwnerID="{8B7C20BC-ECEC-449B-942A-3D3F997D3C57}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Drone" ID="{C1831083-7312-42E5-839C-16288850240B}" ShortID="60915134">
+					<ChildrenList>
+						<Event Name="DroneDie" ID="{32C9FF72-BB04-4A33-9394-1B117FD430E0}">
+							<ChildrenList>
+								<Action Name="" ID="{F6DBF870-5705-4FD1-8358-3C3FD70BC742}" ShortID="433815295">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="droneDeath" ID="{86D45792-E62A-4D67-B5EB-913890AF5943}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

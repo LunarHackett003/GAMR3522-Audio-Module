@@ -9,10 +9,119 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+		<SoundBank Id="782826392" Type="User" Language="SFX" Hash="{C6C866B3-1D07-2365-5705-194A33A0C446}">
+			<ShortName>Default</ShortName>
+			<Path>Default.bnk</Path>
+			<Media>
+				<File Id="3198253" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>concrete4.wav</ShortName>
+					<CachePath>SFX/concrete4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="70889181" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-01.wav</ShortName>
+					<CachePath>SFX/steps/-01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="183073713" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-03.wav</ShortName>
+					<CachePath>SFX/steps/-03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="227416392" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>concrete7.wav</ShortName>
+					<CachePath>SFX/concrete7_818F3B66.wem</CachePath>
+				</File>
+				<File Id="308624272" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>blaster.wav</ShortName>
+					<CachePath>SFX/blaster_818F3B66.wem</CachePath>
+				</File>
+				<File Id="409597543" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-04.wav</ShortName>
+					<CachePath>SFX/steps/-04_818F3B66.wem</CachePath>
+				</File>
+				<File Id="414483335" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>concrete5.wav</ShortName>
+					<CachePath>SFX/concrete5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="448734971" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>concrete2.wav</ShortName>
+					<CachePath>SFX/concrete2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="605552622" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-02.wav</ShortName>
+					<CachePath>SFX/steps/-02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="628794160" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>concrete3.wav</ShortName>
+					<CachePath>SFX/concrete3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="742292978" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>robotDeath.wav</ShortName>
+					<CachePath>SFX/robotDeath_818F3B66.wem</CachePath>
+				</File>
+				<File Id="774241717" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>concrete1.wav</ShortName>
+					<CachePath>SFX/concrete1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="794760155" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>concrete6.wav</ShortName>
+					<CachePath>SFX/concrete6_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="639453935" Name="Blaster_Fire" MaxAttenuation="100" DurationType="OneShot" DurationMin="4.813367" DurationMax="4.9544086">
+					<MediaRefs>
+						<MediaRef Id="308624272"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2170376225" Name="DroneDie" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.4367877" DurationMax="1.5222236">
+					<MediaRefs>
+						<MediaRef Id="742292978"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1866025847" Name="Footstep" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.16451247" DurationMax="0.6226077">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1431031706" Id="2144363834" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="3198253"/>
+								<MediaRef Id="227416392"/>
+								<MediaRef Id="414483335"/>
+								<MediaRef Id="448734971"/>
+								<MediaRef Id="628794160"/>
+								<MediaRef Id="774241717"/>
+								<MediaRef Id="794760155"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1431031706" Id="2473969246"/>
+							<MediaRefs>
+								<MediaRef Id="70889181"/>
+								<MediaRef Id="183073713"/>
+								<MediaRef Id="409597543"/>
+								<MediaRef Id="605552622"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="3205342700" Name="WeaponAmmoRatio"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="1431031706" Name="GroundMaterials">
+					<Switches>
+						<Switch Id="2144363834" Name="Rock"/>
+						<Switch Id="2473969246" Name="Metal"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D54432D9-562B-7048-0EB2-31FA92F1C3E6}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<ShareSets>
+					<Plugin Id="48620415" Name="Have_U_Ever_Been_Outside" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
@@ -21,7 +130,29 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="17995648" Name="GlobalReverb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="48620415"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
+			<GameParameters>
+				<GameParameter Id="151362964" Name="PlayerHealth"/>
+				<GameParameter Id="2807485413" Name="WeaponCharge"/>
+				<GameParameter Id="3205342700" Name="WeaponAmmoRatio"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="1431031706" Name="GroundMaterials">
+					<Switches>
+						<Switch Id="2144363834" Name="Rock"/>
+						<Switch Id="2473969246" Name="Metal"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{65ACD701-C344-9E7E-4B1A-A247DBAA44A3}</FileHash>
+	<FileHash>{3C7C9702-0190-87A8-082A-42B5B5FB411F}</FileHash>
 </SoundBanksInfo>

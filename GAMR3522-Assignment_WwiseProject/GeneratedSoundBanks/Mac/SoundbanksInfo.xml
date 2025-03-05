@@ -9,10 +9,79 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D326F752-7CA2-0A14-FDB1-63ECE89D0199}">
+		<SoundBank Id="782826392" Type="User" Language="SFX" Hash="{9513315C-3B43-18BD-2A27-D8104C557121}">
+			<ShortName>Default</ShortName>
+			<Path>Default.bnk</Path>
+			<Media>
+				<File Id="70889181" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-01.wav</ShortName>
+					<CachePath>SFX/steps/-01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="183073713" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-03.wav</ShortName>
+					<CachePath>SFX/steps/-03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="308624272" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>blaster.wav</ShortName>
+					<CachePath>SFX/blaster_818F3B66.wem</CachePath>
+				</File>
+				<File Id="409597543" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-04.wav</ShortName>
+					<CachePath>SFX/steps/-04_818F3B66.wem</CachePath>
+				</File>
+				<File Id="605552622" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>steps\-02.wav</ShortName>
+					<CachePath>SFX/steps/-02_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="639453935" Name="Blaster_Fire" DurationType="OneShot" DurationMin="4.6092954" DurationMax="5.1737595">
+					<MediaRefs>
+						<MediaRef Id="308624272"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="445985469" Name="Die" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1866025847" Name="Footstep" DurationType="OneShot" DurationMin="0.4351474" DurationMax="0.6226077">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1431031706" Id="2473969246"/>
+							<MediaRefs>
+								<MediaRef Id="70889181"/>
+								<MediaRef Id="183073713"/>
+								<MediaRef Id="409597543"/>
+								<MediaRef Id="605552622"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1431031706" Id="2473969246"/>
+							<MediaRefs>
+								<MediaRef Id="70889181"/>
+								<MediaRef Id="183073713"/>
+								<MediaRef Id="409597543"/>
+								<MediaRef Id="605552622"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1116398592" Name="Hit" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="674522502" Name="Land" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="1431031706" Name="GroundMaterials">
+					<Switches>
+						<Switch Id="2144363834" Name="Rock"/>
+						<Switch Id="2473969246" Name="Metal"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6013B533-BD24-2ADD-551D-D64BD21C6F30}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<ShareSets>
+					<Plugin Id="48620415" Name="Have_U_Ever_Been_Outside" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
@@ -21,7 +90,28 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="17995648" Name="GlobalReverb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="48620415"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
+			<GameParameters>
+				<GameParameter Id="151362964" Name="PlayerHealth"/>
+				<GameParameter Id="2807485413" Name="WeaponCharge"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="1431031706" Name="GroundMaterials">
+					<Switches>
+						<Switch Id="2144363834" Name="Rock"/>
+						<Switch Id="2473969246" Name="Metal"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6C0CB101-D74B-DE5C-AD81-F4CF05FD2B8E}</FileHash>
+	<FileHash>{8761E778-D89B-0E53-C97E-37EF9B9AB17C}</FileHash>
 </SoundBanksInfo>

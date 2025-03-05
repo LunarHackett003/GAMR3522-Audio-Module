@@ -1,9 +1,24 @@
-﻿using Unity.FPS.Game;
+﻿using System.Collections.Generic;
+using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Unity.FPS.Gameplay
 {
+
+    /// <summary>
+    /// Defines a WWise RTPC to be set.<br></br>
+    /// Based on a physic material, sets an RTPC to rtpcValue if the physic material matches an input.
+    /// </summary>
+    [System.Serializable]
+    public struct MaterialParameter
+    {
+        public PhysicMaterial physicMaterial;
+        public AK.Wwise.Switch materialSwitch;
+    }
+
+
+
     [RequireComponent(typeof(CharacterController), typeof(PlayerInputHandler), typeof(AudioSource))]
     public class PlayerCharacterController : MonoBehaviour
     {
@@ -11,76 +26,58 @@ namespace Unity.FPS.Gameplay
         [Tooltip("Reference to the main camera used for the player")]
         public Camera PlayerCamera;
 
-        [Tooltip("Audio source for footsteps, jump, etc...")]
-        public AudioSource AudioSource;
-
+        //Remove audio source
+        //[Tooltip("Audio source for footsteps, jump, etc...")]
+        //public AudioSource AudioSource;
         [Header("General")] [Tooltip("Force applied downward when in the air")]
         public float GravityDownForce = 20f;
-
         [Tooltip("Physic layers checked to consider the player grounded")]
         public LayerMask GroundCheckLayers = -1;
-
         [Tooltip("distance from the bottom of the character controller capsule to test for grounded")]
         public float GroundCheckDistance = 0.05f;
-
         [Header("Movement")] [Tooltip("Max movement speed when grounded (when not sprinting)")]
         public float MaxSpeedOnGround = 10f;
-
         [Tooltip(
             "Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite")]
         public float MovementSharpnessOnGround = 15;
-
         [Tooltip("Max movement speed when crouching")] [Range(0, 1)]
         public float MaxSpeedCrouchedRatio = 0.5f;
-
         [Tooltip("Max movement speed when not grounded")]
         public float MaxSpeedInAir = 10f;
-
         [Tooltip("Acceleration speed when in the air")]
         public float AccelerationSpeedInAir = 25f;
-
         [Tooltip("Multiplicator for the sprint speed (based on grounded speed)")]
         public float SprintSpeedModifier = 2f;
-
         [Tooltip("Height at which the player dies instantly when falling off the map")]
         public float KillHeight = -50f;
-
         [Header("Rotation")] [Tooltip("Rotation speed for moving the camera")]
         public float RotationSpeed = 200f;
-
         [Range(0.1f, 1f)] [Tooltip("Rotation speed multiplier when aiming")]
         public float AimingRotationMultiplier = 0.4f;
-
         [Header("Jump")] [Tooltip("Force applied upward when jumping")]
         public float JumpForce = 9f;
-
         [Header("Stance")] [Tooltip("Ratio (0-1) of the character height where the camera will be at")]
         public float CameraHeightRatio = 0.9f;
-
         [Tooltip("Height of character when standing")]
         public float CapsuleHeightStanding = 1.8f;
-
         [Tooltip("Height of character when crouching")]
         public float CapsuleHeightCrouching = 0.9f;
-
         [Tooltip("Speed of crouching transitions")]
         public float CrouchingSharpness = 10f;
-
         [Header("Audio")] [Tooltip("Amount of footstep sounds played when moving one meter")]
         public float FootstepSfxFrequency = 1f;
-
         [Tooltip("Amount of footstep sounds played when moving one meter while sprinting")]
         public float FootstepSfxFrequencyWhileSprinting = 1f;
 
-        [Tooltip("Sound played for footsteps")]
-        public AudioClip FootstepSfx;
+        //[Tooltip("Sound played for footsteps")]
+        //public AudioClip FootstepSfx;
+        //[Tooltip("Sound played when jumping")] public AudioClip JumpSfx;
+        //[Tooltip("Sound played when landing")] public AudioClip LandSfx;
+        //[Tooltip("Sound played when taking damage froma fall")]
+        //public AudioClip FallDamageSfx;
 
-        [Tooltip("Sound played when jumping")] public AudioClip JumpSfx;
-        [Tooltip("Sound played when landing")] public AudioClip LandSfx;
-
-        [Tooltip("Sound played when taking damage froma fall")]
-        public AudioClip FallDamageSfx;
-
+        
+        
         [Header("Fall Damage")]
         [Tooltip("Whether the player will recieve damage when hitting the ground at high speed")]
         public bool RecievesFallDamage;
@@ -98,6 +95,12 @@ namespace Unity.FPS.Gameplay
         public float FallDamageAtMaxSpeed = 50f;
 
         public UnityAction<bool> OnStanceChanged;
+
+        public MaterialParameter[] groundMaterialParameters;
+        public Dictionary<PhysicMaterial, AK.Wwise.Switch> groundMaterialDictionary;
+
+        public AK.Wwise.Event stepWEvent, landWEvent, hitWEvent, dieWEvent;
+
 
         public Vector3 CharacterVelocity { get; set; }
         public bool IsGrounded { get; private set; }
@@ -142,6 +145,13 @@ namespace Unity.FPS.Gameplay
             ActorsManager actorsManager = FindObjectOfType<ActorsManager>();
             if (actorsManager != null)
                 actorsManager.SetPlayer(gameObject);
+
+
+            groundMaterialDictionary = new();
+            for (int i = 0; i < groundMaterialParameters.Length; i++)
+            {
+                groundMaterialDictionary.Add(groundMaterialParameters[i].physicMaterial, groundMaterialParameters[i].materialSwitch);
+            }
         }
 
         void Start()
@@ -202,12 +212,13 @@ namespace Unity.FPS.Gameplay
                     m_Health.TakeDamage(dmgFromFall, null);
 
                     // fall damage SFX
-                    AudioSource.PlayOneShot(FallDamageSfx);
+                    //AudioSource.PlayOneShot(FallDamageSfx);
+                    //Replace AudioSource.PlayOneShot()
                 }
                 else
                 {
                     // land SFX
-                    AudioSource.PlayOneShot(LandSfx);
+                    //AudioSource.PlayOneShot(LandSfx);
                 }
             }
 
@@ -265,6 +276,13 @@ namespace Unity.FPS.Gameplay
                         {
                             m_Controller.Move(Vector3.down * hit.distance);
                         }
+
+                        //Need to get the ground material and set the RTPC.
+                        if(hit.collider.sharedMaterial != null)
+                        {
+                            groundMaterialDictionary[hit.collider.sharedMaterial].SetValue(gameObject);
+                        }
+                        
                     }
                 }
             }
@@ -333,7 +351,7 @@ namespace Unity.FPS.Gameplay
                             CharacterVelocity += Vector3.up * JumpForce;
 
                             // play sound
-                            AudioSource.PlayOneShot(JumpSfx);
+                            //AudioSource.PlayOneShot(JumpSfx);
 
                             // remember last time we jumped because we need to prevent snapping to ground for a short time
                             m_LastTimeJumped = Time.time;
@@ -351,7 +369,8 @@ namespace Unity.FPS.Gameplay
                     if (m_FootstepDistanceCounter >= 1f / chosenFootstepSfxFrequency)
                     {
                         m_FootstepDistanceCounter = 0f;
-                        AudioSource.PlayOneShot(FootstepSfx);
+                        //AudioSource.PlayOneShot(FootstepSfx);
+                        stepWEvent.Post(gameObject);
                     }
 
                     // keep track of distance traveled for footsteps sound

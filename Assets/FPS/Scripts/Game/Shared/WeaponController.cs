@@ -107,7 +107,14 @@ namespace Unity.FPS.Game
         [Tooltip("Additional ammo used when charge reaches its maximum")]
         public float AmmoUsageRateWhileCharging = 1f;
 
-        [Header("Audio & Visual")] 
+        [Header("Audio & Visual")]
+        public AK.Wwise.Event fireEvent;
+        public bool useChargeEvent;
+        public AK.Wwise.Event chargeStartEvent, chargeFullEvent;
+        public bool setAmmoRatioRtpc;
+        public AK.Wwise.RTPC ammoRatioRtpc;
+        bool playedChargeFullAudio;
+
         [Tooltip("Optional weapon animator for OnShoot animations")]
         public Animator WeaponAnimator;
 
@@ -149,6 +156,9 @@ namespace Unity.FPS.Game
         const string k_AnimAttackParameter = "Attack";
 
         private Queue<Rigidbody> m_PhysicalAmmoPool;
+
+
+        
 
         void Awake()
         {
@@ -242,6 +252,10 @@ namespace Unity.FPS.Game
             {
                 CurrentAmmoRatio = m_CurrentAmmo / MaxAmmo;
             }
+            if (setAmmoRatioRtpc)
+            {
+                ammoRatioRtpc.SetValue(gameObject, 1 - CurrentAmmoRatio);
+            }
         }
 
         void UpdateCharge()
@@ -276,6 +290,16 @@ namespace Unity.FPS.Game
                         CurrentCharge = Mathf.Clamp01(CurrentCharge + chargeAdded);
                     }
                 }
+                else if (!playedChargeFullAudio)
+                {
+                    playedChargeFullAudio = true;
+                    chargeFullEvent.Post(gameObject);
+                    chargeStartEvent.Stop(gameObject);
+                }
+            }
+            else
+            {
+                playedChargeFullAudio = false;
             }
         }
 
@@ -357,6 +381,8 @@ namespace Unity.FPS.Game
             {
                 UseAmmo(AmmoUsedOnStartCharge);
 
+                chargeStartEvent.Post(gameObject);
+
                 LastChargeTriggerTimestamp = Time.time;
                 IsCharging = true;
 
@@ -377,7 +403,7 @@ namespace Unity.FPS.Game
 
                 return true;
             }
-
+            
             return false;
         }
 
@@ -423,6 +449,8 @@ namespace Unity.FPS.Game
             {
                 WeaponAnimator.SetTrigger(k_AnimAttackParameter);
             }
+
+            fireEvent.Post(gameObject);
 
             OnShoot?.Invoke();
             OnShootProcessed?.Invoke();

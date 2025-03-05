@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4D612F12-5FC6-4970-8C1D-B096147406C9}" SchemaVersion="119">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{4D612F12-5FC6-4970-8C1D-B096147406C9}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4D612F12-5FC6-4970-8C1D-B096147406C9}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Default" ID="{2B31C578-A8F7-4120-95FC-A5A56019E246}">
+					<ObjectInclusionList>
+						<ObjectRef Name="concrete6" ID="{6F11093C-74C4-40B3-B98A-0A1F95A6225D}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="concrete4" ID="{D898ED8E-256A-430B-9009-A68ACC62DC45}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="concrete2" ID="{5FCBEE04-1BC0-4537-AEDD-2CE9FEC77EDB}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="concrete7" ID="{2F6EB8B4-CEBC-46CC-9B21-539BDE118BCA}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="concrete1" ID="{8222564B-0607-4869-97AE-85671382C101}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Actor-Mixer Hierarchy" ID="{5EA7BBF8-64C0-4A50-8821-A07E8BE21D68}" WorkUnitID="{5EA7BBF8-64C0-4A50-8821-A07E8BE21D68}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="concrete3" ID="{87EE64CF-2FE8-4C21-8E0D-F33E6FDC4206}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="concrete5" ID="{27F4F661-0D8A-4E64-9D8C-5071970DDE74}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>
