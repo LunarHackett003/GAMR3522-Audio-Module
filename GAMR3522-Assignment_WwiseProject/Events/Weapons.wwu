@@ -20,6 +20,21 @@
 				</Folder>
 				<Folder Name="Shotgun" ID="{4187399D-6C25-428F-B473-FD9AAF3D445B}" ShortID="805439686"/>
 				<Folder Name="DiscLauncher" ID="{FD9C89BD-B53B-4DA3-B113-9ED83849EED0}" ShortID="924805252"/>
+				<Folder Name="General" ID="{1F7F1AF4-DE0A-4CEB-94F6-A48E80E69401}" ShortID="758449607">
+					<ChildrenList>
+						<Event Name="ProjectileImpact" ID="{F564734F-FCC1-44AD-BD72-91F66E8100CC}">
+							<ChildrenList>
+								<Action Name="" ID="{A3A0C9AB-C4D2-4FE7-915F-7A0B9744FED1}" ShortID="438734975">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ProjectileImpacts" ID="{54B33E20-9CEB-4DE4-A51F-26305D533338}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

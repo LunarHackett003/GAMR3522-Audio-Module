@@ -15,21 +15,26 @@ namespace AK
     {
         static const AkUniqueID BLASTER_FIRE = 639453935U;
         static const AkUniqueID DRONEDIE = 2170376225U;
+        static const AkUniqueID DRONEHIT = 2573730588U;
         static const AkUniqueID FOOTSTEP = 1866025847U;
+        static const AkUniqueID JETPACKEND = 1352423772U;
+        static const AkUniqueID JETPACKSTART = 270069247U;
+        static const AkUniqueID PROJECTILEIMPACT = 2610481602U;
     } // namespace EVENTS
 
     namespace SWITCHES
     {
-        namespace GROUNDMATERIALS
+        namespace AUDIOMATERIALS
         {
-            static const AkUniqueID GROUP = 1431031706U;
+            static const AkUniqueID GROUP = 298052177U;
 
             namespace SWITCH
             {
                 static const AkUniqueID METAL = 2473969246U;
+                static const AkUniqueID PLAYER = 1069431850U;
                 static const AkUniqueID ROCK = 2144363834U;
             } // namespace SWITCH
-        } // namespace GROUNDMATERIALS
+        } // namespace AUDIOMATERIALS
 
     } // namespace SWITCHES
 

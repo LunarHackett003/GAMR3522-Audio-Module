@@ -17,6 +17,58 @@
 				<Event Name="Land" ID="{004FC257-7EB6-4AFE-969E-52151931EAC0}"/>
 				<Event Name="Die" ID="{F98EDDC8-3695-42E8-A245-2775C73CB0D5}"/>
 				<Event Name="Hit" ID="{88BC55F3-9EE0-4151-A66D-00769D6B4C61}"/>
+				<Folder Name="Jetpack" ID="{13ADE907-A031-4BAF-893B-371557A6A2AF}" ShortID="58251304">
+					<ChildrenList>
+						<Event Name="JetpackStart" ID="{242ADBC2-FB0D-4831-B497-499267153B06}">
+							<ChildrenList>
+								<Action Name="" ID="{367D889C-0993-4BB5-A12E-F54AE53F036D}" ShortID="142363024">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="jetpackconsume" ID="{DCB8C7C4-7EDE-43A2-92CE-CA432684A795}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="JetpackEnd" ID="{98AAB6AF-D994-4B68-9182-53ABCFAE999A}">
+							<ChildrenList>
+								<Action Name="" ID="{8D9AB169-F056-4ACD-B70A-47FDE86767AB}" ShortID="401596562">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="jetpackconsume" ID="{DCB8C7C4-7EDE-43A2-92CE-CA432684A795}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{146DE312-0E32-4C80-8157-A441530B390B}" ShortID="397691883">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="jetpackconsume" ID="{DCB8C7C4-7EDE-43A2-92CE-CA432684A795}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8398B499-49CD-4AE3-BA6A-465BE8B695D6}" ShortID="358732922">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64" Value="72"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="jetpackconsume" ID="{DCB8C7C4-7EDE-43A2-92CE-CA432684A795}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

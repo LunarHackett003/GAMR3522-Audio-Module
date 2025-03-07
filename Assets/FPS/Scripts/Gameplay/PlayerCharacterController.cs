@@ -5,21 +5,7 @@ using UnityEngine.Events;
 
 namespace Unity.FPS.Gameplay
 {
-
-    /// <summary>
-    /// Defines a WWise RTPC to be set.<br></br>
-    /// Based on a physic material, sets an RTPC to rtpcValue if the physic material matches an input.
-    /// </summary>
-    [System.Serializable]
-    public struct MaterialParameter
-    {
-        public PhysicMaterial physicMaterial;
-        public AK.Wwise.Switch materialSwitch;
-    }
-
-
-
-    [RequireComponent(typeof(CharacterController), typeof(PlayerInputHandler), typeof(AudioSource))]
+    [RequireComponent(typeof(CharacterController), typeof(PlayerInputHandler))]
     public class PlayerCharacterController : MonoBehaviour
     {
         [Header("References")]
@@ -96,8 +82,6 @@ namespace Unity.FPS.Gameplay
 
         public UnityAction<bool> OnStanceChanged;
 
-        public MaterialParameter[] groundMaterialParameters;
-        public Dictionary<PhysicMaterial, AK.Wwise.Switch> groundMaterialDictionary;
 
         public AK.Wwise.Event stepWEvent, landWEvent, hitWEvent, dieWEvent;
 
@@ -145,13 +129,6 @@ namespace Unity.FPS.Gameplay
             ActorsManager actorsManager = FindObjectOfType<ActorsManager>();
             if (actorsManager != null)
                 actorsManager.SetPlayer(gameObject);
-
-
-            groundMaterialDictionary = new();
-            for (int i = 0; i < groundMaterialParameters.Length; i++)
-            {
-                groundMaterialDictionary.Add(groundMaterialParameters[i].physicMaterial, groundMaterialParameters[i].materialSwitch);
-            }
         }
 
         void Start()
@@ -280,7 +257,7 @@ namespace Unity.FPS.Gameplay
                         //Need to get the ground material and set the RTPC.
                         if(hit.collider.sharedMaterial != null)
                         {
-                            groundMaterialDictionary[hit.collider.sharedMaterial].SetValue(gameObject);
+                            AudioManager.Instance.SetSwitchByPhysicMaterial(gameObject, hit.collider.sharedMaterial);
                         }
                         
                     }

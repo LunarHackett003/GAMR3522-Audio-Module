@@ -11,6 +11,14 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AuxBus Name="GlobalReverb" ID="{9A8733A6-B396-4001-AA95-74C88837B513}">
+							<PropertyList>
+								<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ExponentionalAttenuation" ID="{3C8C36A3-5122-4BB6-B771-4CEB3DA63E04}" WorkUnitID="{F01CAF38-3874-478C-8BA3-E0208EBB85E7}"/>
+								</Reference>
+							</ReferenceList>
 							<ObjectLists>
 								<ObjectList Name="Effects">
 									<Reference>

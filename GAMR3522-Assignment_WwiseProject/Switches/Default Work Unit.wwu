@@ -3,10 +3,11 @@
 	<Switches>
 		<WorkUnit Name="Default Work Unit" ID="{EB9C5791-FC8E-4E0D-82F8-3BA71FA27675}" PersistMode="Standalone">
 			<ChildrenList>
-				<SwitchGroup Name="GroundMaterials" ID="{E10C6A10-F9B4-408D-81C0-D53E204D1540}">
+				<SwitchGroup Name="AudioMaterials" ID="{E10C6A10-F9B4-408D-81C0-D53E204D1540}">
 					<ChildrenList>
 						<Switch Name="Rock" ID="{B9E6AA96-8C8C-4421-BE87-37F8AD27785A}"/>
 						<Switch Name="Metal" ID="{20D81AFC-C70E-4DC4-A5F2-4F8F1D29AF5A}"/>
+						<Switch Name="Player" ID="{38E7E0C1-FF6F-4041-9A8B-AEC0037908E6}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

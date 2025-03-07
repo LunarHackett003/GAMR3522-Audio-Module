@@ -475,23 +475,6 @@ MonoBehaviour:
   MaxSpeedForFallDamage: 40
   FallDamageAtMinSpeed: 10
   FallDamageAtMaxSpeed: 30
-  groundMaterialParameters:
-  - physicMaterial: {fileID: 13400000, guid: 6d1d3b76463530c43954ad69b5a6f77c, type: 2}
-    materialSwitch:
-      idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 8a9cb88f6a5acaa4299ffcda2f0978e2,
-        type: 2}
-  - physicMaterial: {fileID: 13400000, guid: 9304ebf99ccf9a245adb47e257515260, type: 2}
-    materialSwitch:
-      idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 3b0b77591481e6c45ac300aaa37cf58f,
-        type: 2}
   stepWEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -583,6 +566,16 @@ MonoBehaviour:
   RefillDurationInTheAir: 5
   RefillDelay: 1
   JetpackSfx: {fileID: 8300000, guid: 01a15bd1861d7914abbedc36aad1f4d6, type: 3}
+  jetpackStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 676ed096f5087274bb4dbe1ea18048c9,
+      type: 2}
+  jetpackStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 535fda986e9e27e439b6f4cc978cc08e,
+      type: 2}
 --- !u!143 &3122855503829242450
 CharacterController:
   m_ObjectHideFlags: 0

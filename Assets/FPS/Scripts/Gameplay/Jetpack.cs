@@ -4,12 +4,9 @@ using UnityEngine.Events;
 
 namespace Unity.FPS.Gameplay
 {
-    [RequireComponent(typeof(AudioSource))]
     public class Jetpack : MonoBehaviour
     {
-        [Header("References")] [Tooltip("Audio source for jetpack sfx")]
-        public AudioSource AudioSource;
-
+        [Header("References")]
         [Tooltip("Particles for jetpack vfx")] public ParticleSystem[] JetpackVfx;
 
         [Header("Parameters")] [Tooltip("Whether the jetpack is unlocked at the begining or not")]
@@ -38,6 +35,10 @@ namespace Unity.FPS.Gameplay
         [Header("Audio")] [Tooltip("Sound played when using the jetpack")]
         public AudioClip JetpackSfx;
 
+        public AK.Wwise.Event jetpackStartEvent, jetpackStopEvent;
+        bool jetpackPlaying;
+
+
         bool m_CanUseJetpack;
         PlayerCharacterController m_PlayerCharacterController;
         PlayerInputHandler m_InputHandler;
@@ -63,9 +64,6 @@ namespace Unity.FPS.Gameplay
             DebugUtility.HandleErrorIfNullGetComponent<PlayerInputHandler, Jetpack>(m_InputHandler, this, gameObject);
 
             CurrentFillRatio = 1f;
-
-            AudioSource.clip = JetpackSfx;
-            AudioSource.loop = true;
         }
 
         void Update()
@@ -101,10 +99,10 @@ namespace Unity.FPS.Gameplay
                 }
 
                 // apply the acceleration to character's velocity
-                m_PlayerCharacterController.CharacterVelocity += Vector3.up * totalAcceleration * Time.deltaTime;
+                m_PlayerCharacterController.CharacterVelocity += Time.deltaTime * totalAcceleration * Vector3.up;
 
                 // consume fuel
-                CurrentFillRatio = CurrentFillRatio - (Time.deltaTime / ConsumeDuration);
+                CurrentFillRatio -= (Time.deltaTime / ConsumeDuration);
 
                 for (int i = 0; i < JetpackVfx.Length; i++)
                 {
@@ -112,8 +110,11 @@ namespace Unity.FPS.Gameplay
                     emissionModulesVfx.enabled = true;
                 }
 
-                if (!AudioSource.isPlaying)
-                    AudioSource.Play();
+                if (!jetpackPlaying)
+                {
+                    jetpackPlaying = true;
+                    jetpackStartEvent.Post(gameObject);
+                }
             }
             else
             {
@@ -123,7 +124,7 @@ namespace Unity.FPS.Gameplay
                     float refillRate = 1 / (m_PlayerCharacterController.IsGrounded
                         ? RefillDurationGrounded
                         : RefillDurationInTheAir);
-                    CurrentFillRatio = CurrentFillRatio + Time.deltaTime * refillRate;
+                    CurrentFillRatio += Time.deltaTime * refillRate;
                 }
 
                 for (int i = 0; i < JetpackVfx.Length; i++)
@@ -135,8 +136,11 @@ namespace Unity.FPS.Gameplay
                 // keeps the ratio between 0 and 1
                 CurrentFillRatio = Mathf.Clamp01(CurrentFillRatio);
 
-                if (AudioSource.isPlaying)
-                    AudioSource.Stop();
+                if (jetpackPlaying)
+                {
+                    jetpackPlaying = false;
+                    jetpackStopEvent.Post(gameObject);
+                }
             }
         }
 

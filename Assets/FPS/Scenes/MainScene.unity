@@ -1536,14 +1536,14 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 983198703}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &800868750
-BoxCollider:
+--- !u!64 &800868753
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800868746}
-  m_Material: {fileID: 13400000, guid: 6d1d3b76463530c43954ad69b5a6f77c, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1554,9 +1554,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.03658319, y: 0.08657195, z: 0.028014518}
-  m_Center: {x: 0.0001672014, y: 0.0077736857, z: 8.8194146e-11}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6114312541732157040, guid: 09cedba8f9aec6648b491fb880d0a61a, type: 3}
 --- !u!1 &822632576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1833,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09cedba8f9aec6648b491fb880d0a61a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 800868750}
+      addedObject: {fileID: 800868753}
   m_SourcePrefab: {fileID: 100100000, guid: 09cedba8f9aec6648b491fb880d0a61a, type: 3}
 --- !u!1 &1062857853 stripped
 GameObject:
@@ -1881,8 +1882,7 @@ GameObject:
   - component: {fileID: 1138842526}
   - component: {fileID: 1138842525}
   - component: {fileID: 1138842524}
-  - component: {fileID: 1138842527}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EncapCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1975,28 +1975,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138842522}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1138842527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138842522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4832a2ba0b644a42993ad98708c542e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  excludeOthers: 0
-  isDefault: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3e4c631dc410c454e96fd3968c4c9342,
-      type: 2}
-  priority: 0
-  auxBusIdInternal: 0
-  valueGuidInternal: 
 --- !u!1 &1199365773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2932,6 +2910,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462240150}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1496440959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1496440960}
+  - component: {fileID: 1496440961}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1496440960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496440959}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -192.73, y: 43.31, z: -135.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1496440961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496440959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2ba19d9a976da42a87741a9f47b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMaterials:
+  - physicMaterial: {fileID: 13400000, guid: 6d1d3b76463530c43954ad69b5a6f77c, type: 2}
+    materialSwitch:
+      idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 8a9cb88f6a5acaa4299ffcda2f0978e2,
+        type: 2}
+  - physicMaterial: {fileID: 13400000, guid: 9304ebf99ccf9a245adb47e257515260, type: 2}
+    materialSwitch:
+      idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 3b0b77591481e6c45ac300aaa37cf58f,
+        type: 2}
 --- !u!1 &1528469131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,10 +4581,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2729281213735534851}
     m_Modifications:
-    - target: {fileID: 783424908873546082, guid: 761cdc9e4e883334cbdcea062d0befa7,
+    - target: {fileID: 2758827746426004724, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
-      propertyPath: AudioSource
-      value: 
+      propertyPath: m_StopNaN
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758827746426004724, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: m_Dithering
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758827746426004724, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758827746426004724, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599522773131448867, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: isEnvironmentAware
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7253983127304857660, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -5481,3 +5540,4 @@ SceneRoots:
   - {fileID: 2729281213170272051}
   - {fileID: 2729281213673322026}
   - {fileID: 760770081}
+  - {fileID: 1496440960}

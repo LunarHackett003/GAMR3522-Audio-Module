@@ -10,7 +10,18 @@
 								<Action Name="" ID="{F6DBF870-5705-4FD1-8358-3C3FD70BC742}" ShortID="433815295">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="droneDeath" ID="{86D45792-E62A-4D67-B5EB-913890AF5943}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+											<ObjectRef Name="droneDie" ID="{9E9734AE-F6E4-4B79-972D-0AD425D2255B}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="DroneHit" ID="{DBE1D2C1-5683-4B42-B648-90B58629F9F9}">
+							<ChildrenList>
+								<Action Name="" ID="{4BDB1F32-7275-41EC-B1C6-CF613ACB2F69}" ShortID="798797644">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="droneHit" ID="{CF55368C-7BD0-4D48-AF23-9BC7F508F233}" WorkUnitID="{8876358B-5329-41DE-ABD6-6138F3FD5400}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

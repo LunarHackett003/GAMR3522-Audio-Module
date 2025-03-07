@@ -14,7 +14,8 @@ namespace Unity.FPS.Gameplay
 
         [Tooltip("Rotation angle per second")] public float RotatingSpeed = 360f;
 
-        [Tooltip("Sound played on pickup")] public AudioClip PickupSfx;
+        //[Tooltip("Sound played on pickup")] public AudioClip PickupSfx;
+        public AK.Wwise.Event pickupEvent;
         [Tooltip("VFX spawned on pickup")] public GameObject PickupVfxPrefab;
 
         public Rigidbody PickupRigidbody { get; private set; }
@@ -50,9 +51,7 @@ namespace Unity.FPS.Gameplay
 
         void OnTriggerEnter(Collider other)
         {
-            PlayerCharacterController pickingPlayer = other.GetComponent<PlayerCharacterController>();
-
-            if (pickingPlayer != null)
+            if (other.TryGetComponent(out PlayerCharacterController pickingPlayer))
             {
                 OnPicked(pickingPlayer);
 
@@ -77,6 +76,8 @@ namespace Unity.FPS.Gameplay
             {
                 var pickupVfxInstance = Instantiate(PickupVfxPrefab, transform.position, Quaternion.identity);
             }
+
+            pickupEvent.Post(gameObject);
 
             m_HasPlayedFeedback = true;
         }
